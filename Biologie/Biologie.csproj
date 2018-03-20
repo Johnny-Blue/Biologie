@@ -61,7 +61,7 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>EF4DA3EE29511FB5A54DDFBB865673036C137525</ManifestCertificateThumbprint>
@@ -141,6 +141,7 @@
       <DependentUpon>AdminTeste.cs</DependentUpon>
     </Compile>
     <Compile Include="ConnectionTools.cs" />
+    <Compile Include="db\BioDB.cs" />
     <Compile Include="DB_A36E0C_flesarraduDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -183,6 +184,7 @@
     <Compile Include="MeniuProfesor.Designer.cs">
       <DependentUpon>MeniuProfesor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="rezultate.cs">
       <DependentUpon>EntityFBio.tt</DependentUpon>
@@ -254,7 +256,9 @@
     <EmbeddedResource Include="VizualizareRezultate.resx">
       <DependentUpon>VizualizareRezultate.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <EntityDeploy Include="EntityFBio.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EntityFBio.Designer.cs</LastGenOutput>
