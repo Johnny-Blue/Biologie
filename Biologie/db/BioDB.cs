@@ -27,6 +27,7 @@ namespace Biologie.db
         public virtual DbSet<Enunt> Enunturi { get; set; }
         public virtual DbSet<Test> Teste { get; set; }
         public virtual DbSet<Rezultat> Rezultate { get; set; }
+        
         public virtual DbSet<Clasa> Clase { get; set; }
     }
 
@@ -101,6 +102,7 @@ namespace Biologie.db
         [Column(TypeName = "nvarchar")]
         [StringLength(50)]
         public string Nota { get; set; }
+        public int Mark { get; set; }
         public int TestId { get; set; }
         [ForeignKey("TestId")]
         public Test Test { get; set; }
@@ -108,6 +110,7 @@ namespace Biologie.db
         public Account Account { get; set; }
     }
 
+    [Table("Clase")]
     public class Clasa
     {
         public int Id { get; set; }

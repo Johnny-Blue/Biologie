@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Windows.Forms;
+using Biologie.db;
 
 namespace Biologie
 {
@@ -23,6 +24,9 @@ namespace Biologie
                         return false;       
             }
         }
+
+
+
         public bool verificaUser(string user)
         {
             using (var db = new EntityFBio())
@@ -196,6 +200,16 @@ namespace Biologie
                     return x.nume;
                 return null;
             }
+        }
+
+        public static bool adaugaClasa(int id, string className)
+        {
+            int saved = 0;
+            using (BioDB dbContext = new BioDB()) {
+                dbContext.Clase.Add(new Clasa { Id = id, ClasaName = className });
+                 saved = dbContext.SaveChanges();
+            }
+            return saved == 1;
         }
     }
 }
